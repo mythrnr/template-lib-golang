@@ -11,7 +11,7 @@ cover:
 		run --rm app sh scripts/cover.sh $(target)
 
 godoc:
-	docker-compose up docs
+	docker-compose up docs godoc
 
 lint:
 	docker-compose \
