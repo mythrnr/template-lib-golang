@@ -5,104 +5,22 @@ on:
     tags:
       - "v*"
 
-env:
-  SLACK_COLOR_FAILED: "#a92d2e"
-  SLACK_COLOR: "#32bd77"
-  SLACK_ICON: "https://github.com/github.png"
-  SLACK_USERNAME: "GitHub Actions"
-
 jobs:
-  release:
-    name: "Build Container"
+  create_release:
     runs-on: "ubuntu-latest"
     steps:
       - uses: "actions/checkout@v2"
 
-      - name: "Get app version"
-        run: |
-          echo "APP_VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+      - name: "Set Version"
+        run: echo "APP_VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
 
       - name: "Create release"
         id: "create-release"
         uses: "actions/create-release@v1.1.0"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          draft: ${{ contains(env.APP_VERSION, '-dev') }}
-          prerelease: ${{ contains(env.APP_VERSION, '-dev') }}
-          release_name: Release ${{ env.APP_VERSION }}
-          tag_name: ${{ env.APP_VERSION }}
-
-      - name: "Slack Notification on success"
-        if: "success()"
-        uses: "8398a7/action-slack@v3"
-        env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          SLACK_WEBHOOK_URL: "${{ secrets.SLACK_WEBHOOK }}"
         with:
-          status: "custom"
-          custom_payload: |
-            {
-              username: '${{ env.SLACK_USERNAME }}',
-              channel: '${{ secrets.SLACK_CHANNEL }}',
-              "icon_url": '${{ env.SLACK_ICON }}',
-              text: 'Workflow [${{ github.workflow }}] is successful.',
-              attachments: [{
-                "author_name": "${{ github.actor }}",
-                "author_link": "http://github.com/${{ github.actor }}",
-                "author_icon": "http://github.com/${{ github.actor }}.png?size=32",
-                color: '${{ env.SLACK_COLOR }}',
-                fields: [{
-                  title: 'Ref',
-                  value: '${{ github.ref }}',
-                  short: true
-                }, {
-                  title: 'Event',
-                  value: '${{ github.event_name }}',
-                  short: true
-                }, {
-                  title: 'Actions URL',
-                  value: 'https://github.com/${{ github.repository }}/actions',
-                  short: false
-                }, {
-                  title: 'Release URL',
-                  value: 'https://github.com/${{ github.repository }}/releases/tag/${{ github.ref }}',
-                  short: false
-                }]
-              }]
-            }
-
-      - name: "Slack Notification on failure"
-        if: "failure()"
-        uses: "8398a7/action-slack@v3"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          SLACK_WEBHOOK_URL: "${{ secrets.SLACK_WEBHOOK }}"
-        with:
-          status: "custom"
-          custom_payload: |
-            {
-              username: '${{ env.SLACK_USERNAME }}',
-              channel: '${{ secrets.SLACK_CHANNEL }}',
-              "icon_url": '${{ env.SLACK_ICON }}',
-              text: 'Workflow [${{ github.workflow }}] is failure.',
-              attachments: [{
-                "author_name": "${{ github.actor }}",
-                "author_link": "http://github.com/${{ github.actor }}",
-                "author_icon": "http://github.com/${{ github.actor }}.png?size=32",
-                color: '${{ env.SLACK_COLOR_FAILED }}',
-                fields: [{
-                  title: 'Ref',
-                  value: '${{ github.ref }}',
-                  short: true
-                }, {
-                  title: 'Event',
-                  value: '${{ github.event_name }}',
-                  short: true
-                }, {
-                  title: 'Actions URL',
-                  value: 'https://github.com/${{ github.repository }}/actions',
-                  short: false
-                }]
-              }]
-            }
+          draft: false
+          prerelease: "${{ contains(env.APP_VERSION, '-dev') }}"
+          release_name: "Release ${{ env.APP_VERSION }}"
+          tag_name: "${{ env.APP_VERSION }}"

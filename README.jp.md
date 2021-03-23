@@ -1,13 +1,13 @@
 # template-lib-golang
 
-[日本語](./README.jp.md)
+[English](./README.md)
 
-- A template repository for Go language libraries.
+- Go言語のライブラリ用のテンプレートリポジトリ.
 
 ## After creating the repository
 
-- Replace `mythrnr/template-lib-golang` with the name of the repository you created.
-- Change `LICENSE` to match your own library.
+- `mythrnr/template-lib-golang` を作成したリポジトリ名に置換する.
+- `LICENSE` は自身のライブラリに沿ったものに変更する.
 
 ## Status
 
@@ -17,15 +17,15 @@
 
 ## Description
 
-This package is awesome.
+素晴らしいパッケージ.
 
 ## Requirements
 
-Go 1.13 or above.
+Go 1.13 以上.
 
 ## Install
 
-Get it with `go get`.
+`go get` で取得する.
 
 ```bash
 go get github.com/mythrnr/template-lib-golang
@@ -33,4 +33,4 @@ go get github.com/mythrnr/template-lib-golang
 
 ## Usage
 
-Write usage.
+使い方をここに記載.

@@ -1,43 +1,18 @@
-.PHONY: cover godoc lint mock pull test tidy
+.PHONY: lint test test-json tidy
+.SILENT: test-json
 
-overridefile ?= override
-target ?= .
-lint_target ?= ./...
-
-cover:
-	docker-compose \
-		-f docker-compose.yml \
-		-f docker-compose.$(overridefile).yml \
-		run --rm app sh scripts/cover.sh $(target)
-
-godoc:
-	docker-compose up docs godoc
+target ?= ./...
 
 lint:
-	docker-compose \
-		-f docker-compose.yml \
-		-f docker-compose.$(overridefile).yml \
-		run --rm --no-deps app golangci-lint run \
-			--config=./.golangci.yml \
-			--print-issued-lines=false $(lint_target)
-
-mock:
-	docker-compose run --rm --no-deps app \
-		sh scripts/genmock.sh $(target)
-
-pull:
-	docker-compose \
-		-f docker-compose.yml \
-		-f docker-compose.$(overridefile).yml pull
+	golangci-lint run \
+		--config=.golangci.yml \
+		--print-issued-lines=false $(target)
 
 test:
-	docker-compose \
-		-f docker-compose.yml \
-		-f docker-compose.$(overridefile).yml \
-		run --rm app sh scripts/test.sh $(target)
+	go test -cover $(target)
+
+test-json:
+	go test -cover -json $(target)
 
 tidy:
-	docker-compose \
-		-f docker-compose.yml \
-		-f docker-compose.$(overridefile).yml \
-		run --rm --no-deps app go mod tidy
+	go mod tidy

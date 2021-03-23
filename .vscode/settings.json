@@ -1,22 +1,17 @@
 {
-  "[go]": {
-    "editor.formatOnSave": true
-  },
   "[markdown]": {
     "files.trimTrailingWhitespace": false
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.formatOnSave": true
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.insertSpaces": false,
   "go.autocompleteUnimportedPackages": true,
   "go.formatTool": "goimports",
   "go.inferGopath": false,
   "go.languageServerExperimentalFeatures": {
-    "diagnostics": true,
-    "documentLink": true
+    "diagnostics": true
   },
   "go.lintOnSave": "workspace",
   "go.lintTool": "golangci-lint",
