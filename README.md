@@ -2,12 +2,12 @@
 
 [日本語](./README.jp.md)
 
-- A template repository for Go language libraries.
+- A template repository for Go library.
 
 ## After creating the repository
 
-- Replace `mythrnr/template-lib-golang` with the name of the repository you created.
-- Change `LICENSE` to match your own library.
+- Replace `mythrnr/template-lib-golang` to your module name.
+- Change [`LICENSE`](./LICENSE) to match your own library.
 
 ## Status
 
@@ -21,7 +21,9 @@ This package is awesome.
 
 ## Requirements
 
-Go 1.13 or above.
+- Go 1.13 or above.
+
+- [golangci-lint](https://golangci-lint.run)
 
 ## Install
 

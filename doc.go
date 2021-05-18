@@ -1,2 +1,4 @@
-// Package mylib is awesome package.
+/*
+Package mylib provides awesome package.
+*/
 package mylib

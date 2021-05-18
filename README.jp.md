@@ -2,12 +2,12 @@
 
 [English](./README.md)
 
-- Go言語のライブラリ用のテンプレートリポジトリ.
+- Go のライブラリ用のテンプレートリポジトリ.
 
 ## After creating the repository
 
 - `mythrnr/template-lib-golang` を作成したリポジトリ名に置換する.
-- `LICENSE` は自身のライブラリに沿ったものに変更する.
+- [`LICENSE`](./LICENSE) は自身のライブラリに沿ったものに変更する.
 
 ## Status
 
@@ -21,7 +21,9 @@
 
 ## Requirements
 
-Go 1.13 以上.
+- Go 1.13 以上.
+
+- [golangci-lint](https://golangci-lint.run)
 
 ## Install
 

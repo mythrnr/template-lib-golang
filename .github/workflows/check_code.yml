@@ -64,8 +64,10 @@ jobs:
         id: "gomodcache-dir"
         with:
           path: "${{ steps.gomodcache-dir-path.outputs.dir }}"
-          key: "${{ runner.os }}-mythrnr-template-lib-golang-${{ matrix.go }}-${{ hashFiles(format('{0}{1}', github.workspace, '/go.sum')) }}"
-          restore-keys: "${{ runner.os }}-mythrnr-template-lib-golang-${{ matrix.go }}-"
+          key: "${{ runner.os }}-${{ matrix.go }}-${{ hashFiles('go.sum') }}"
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.go }}-
+            ${{ runner.os }}-
 
       - name: "Run tests"
         run: "make test-json > result.json"
