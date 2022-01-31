@@ -21,7 +21,7 @@
 
 ## Requirements
 
-- Go 1.13 以上.
+- Go 1.16 以上.
 
 - [golangci-lint](https://golangci-lint.run)
 

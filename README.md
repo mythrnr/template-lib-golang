@@ -21,7 +21,7 @@ This package is awesome.
 
 ## Requirements
 
-- Go 1.13 or above.
+- Go 1.16 or above.
 
 - [golangci-lint](https://golangci-lint.run)
 
