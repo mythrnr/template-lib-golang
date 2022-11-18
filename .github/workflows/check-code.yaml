@@ -4,14 +4,15 @@ on:
   pull_request:
   push:
     branches:
-      - "nothing"
-      # - "master"
+      # - "nothing"
+      - "master"
   workflow_dispatch:
 
 jobs:
   golangci-lint:
     name: "Check coding style"
     runs-on: "ubuntu-latest"
+    timeout-minutes: 5
     steps:
       - uses: "actions/checkout@v3"
 
@@ -19,9 +20,10 @@ jobs:
         with:
           version: "latest"
 
-  scan_vulnerabilities:
+  scan-vulnerabilities:
     name: "Scan Vulnerabilities"
     runs-on: "ubuntu-latest"
+    timeout-minutes: 5
     steps:
       - uses: "actions/checkout@v3"
 
@@ -37,6 +39,7 @@ jobs:
   spell-check:
     name: "Check spell"
     runs-on: "ubuntu-latest"
+    timeout-minutes: 5
     steps:
       - uses: "actions/checkout@v3"
 
@@ -53,6 +56,7 @@ jobs:
   testing:
     name: "Unit Test"
     runs-on: "ubuntu-latest"
+    timeout-minutes: 5
     strategy:
       matrix:
         go:
