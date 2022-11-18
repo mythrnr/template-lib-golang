@@ -11,9 +11,11 @@
 
 ## Status
 
-[![Check codes](https://github.com/mythrnr/template-lib-golang/actions/workflows/check_code.yaml/badge.svg)](https://github.com/mythrnr/template-lib-golang/actions/workflows/check_code.yaml)
+[![Check codes](https://github.com/mythrnr/template-lib-golang/actions/workflows/check-code.yaml/badge.svg)](https://github.com/mythrnr/template-lib-golang/actions/workflows/check-code.yaml)
 
 [![Create Release](https://github.com/mythrnr/template-lib-golang/actions/workflows/release.yaml/badge.svg)](https://github.com/mythrnr/template-lib-golang/actions/workflows/release.yaml)
+
+[![Scan Vulnerabilities](https://github.com/mythrnr/template-lib-golang/actions/workflows/scan-vulnerabilities.yaml/badge.svg)](https://github.com/mythrnr/template-lib-golang/actions/workflows/scan-vulnerabilities.yaml)
 
 ## Description
 
