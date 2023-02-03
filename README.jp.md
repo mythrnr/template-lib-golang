@@ -24,8 +24,7 @@
 ## Requirements
 
 - Go 1.16 以上.
-
-- [golangci-lint](https://golangci-lint.run)
+- Docker (開発時)
 
 ## Install
 

@@ -2,7 +2,15 @@
   "caseSensitive": false,
   "dictionaries": [
     "bash",
+    "docker",
     "golang"
+  ],
+  "enableGlobDot": true,
+  "ignorePaths": [
+    ".cache",
+    ".git",
+    "go.mod",
+    "go.sum"
   ],
   "language": "en",
   "minWordLength": 4,
@@ -36,6 +44,7 @@
     "rowserrcheck",
     "scopelint",
     "sonatype",
+    "sonatypecommunity",
     "sqlclosecheck",
     "staticcheck",
     "structcheck",
