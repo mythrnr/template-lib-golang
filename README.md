@@ -21,7 +21,7 @@ This package is awesome.
 
 ## Requirements
 
-- Go 1.16 or above.
+- Go 1.18 or above.
 - Docker (for Development)
 
 ## Install
