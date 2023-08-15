@@ -21,7 +21,7 @@
 
 ## Requirements
 
-- Go 1.18 以上.
+- Go 1.21 以上.
 - Docker (開発時)
 
 ## Install
