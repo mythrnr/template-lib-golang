@@ -20,12 +20,6 @@ linters-settings:
     keywords:
       - "TODO"
       - "FIXME"
-  mnd:
-    ignored-functions:
-      - "strconv.FormatInt"
-      - "strconv.ParseFloat"
-      - "strconv.ParseInt"
-      - "strconv.ParseUint"
   lll:
     line-length: 80
     tab-width: 4
@@ -35,6 +29,12 @@ linters-settings:
     locale: "US"
     ignore-words:
       - "some_word"
+  mnd:
+    ignored-functions:
+      - "strconv.FormatInt"
+      - "strconv.ParseFloat"
+      - "strconv.ParseInt"
+      - "strconv.ParseUint"
   nestif:
     min-complexity: 4
   testpackage:
