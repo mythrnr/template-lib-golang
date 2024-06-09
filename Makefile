@@ -16,7 +16,7 @@ fmt:
 .PHONY: lint
 lint:
 	docker pull golangci/golangci-lint:latest > /dev/null \
-	&& mkdir -p .cache/golangci-lint \
+	&& mkdir -p .cache/golangci-lint .cache/go-build \
 	&& docker run --rm \
 		-v $(pwd):/app \
 		-v $(pwd)/.cache:/root/.cache \

@@ -1,8 +1,6 @@
 # see: https://github.com/golangci/golangci-lint/blob/master/.golangci.example.yml
 run:
-  skip-dirs:
-    - ".github"
-    - ".vscode"
+  go: "1.22"
 
 output:
   sort-results: true
@@ -23,9 +21,7 @@ linters-settings:
       - "TODO"
       - "FIXME"
   gomnd:
-    settings:
-      mnd:
-        ignored-functions: "strconv.FormatInt,strconv.ParseFloat,strconv.ParseInt,strconv.ParseUint"
+    ignored-functions: "strconv.FormatInt,strconv.ParseFloat,strconv.ParseInt,strconv.ParseUint"
   ifshort:
     max-decl-lines: 1
     max-decl-chars: 60
@@ -40,26 +36,14 @@ linters-settings:
       - "some_word"
   nestif:
     min-complexity: 4
-  staticcheck:
-    go: "1.22"
   testpackage:
     skip-regexp: "_inner_test.go"
 
 linters:
   disable:
     # ---- deprecated ---- #
-    - "deadcode"
-    - "exhaustivestruct"
-    - "golint"
-    - "ifshort"
-    - "interfacer"
-    - "maligned"
-    - "nosnakecase"
     - "rowserrcheck"
-    - "scopelint"
     - "sqlclosecheck"
-    - "structcheck"
-    - "varcheck"
     - "wastedassign"
     # -------------------- #
   presets:
@@ -72,6 +56,9 @@ linters:
   fast: false
 
 issues:
+  exclude-dirs:
+    - ".github"
+    - ".vscode"
   exclude-rules:
     # Exclude some linters from running on tests files.
     - path: "_test.go"
