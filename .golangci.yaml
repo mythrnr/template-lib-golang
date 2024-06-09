@@ -1,4 +1,4 @@
-# see: https://github.com/golangci/golangci-lint/blob/master/.golangci.example.yml
+# see: https://golangci-lint.run/usage/configuration/
 run:
   go: "1.22"
 
@@ -20,11 +20,12 @@ linters-settings:
     keywords:
       - "TODO"
       - "FIXME"
-  gomnd:
-    ignored-functions: "strconv.FormatInt,strconv.ParseFloat,strconv.ParseInt,strconv.ParseUint"
-  ifshort:
-    max-decl-lines: 1
-    max-decl-chars: 60
+  mnd:
+    ignored-functions:
+      - "strconv.FormatInt"
+      - "strconv.ParseFloat"
+      - "strconv.ParseInt"
+      - "strconv.ParseUint"
   lll:
     line-length: 80
     tab-width: 4
@@ -42,17 +43,10 @@ linters-settings:
 linters:
   disable:
     # ---- deprecated ---- #
-    - "rowserrcheck"
-    - "sqlclosecheck"
-    - "wastedassign"
+    - "execinquery"
+    - "gomnd"
     # -------------------- #
-  presets:
-    - "bugs"
-    - "complexity"
-    - "format"
-    - "performance"
-    - "style"
-    - "unused"
+  enable-all: true
   fast: false
 
 issues:
