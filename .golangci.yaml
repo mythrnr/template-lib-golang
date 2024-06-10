@@ -53,10 +53,3 @@ issues:
   exclude-dirs:
     - ".github"
     - ".vscode"
-  exclude-rules:
-    # Exclude some linters from running on tests files.
-    - path: "_test.go"
-      linters:
-        - "dupl"
-        - "errcheck"
-        - "funlen"
