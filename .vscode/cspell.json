@@ -19,6 +19,7 @@
     "cyclop",
     "dupl",
     "execinquery",
+    "exportloopref",
     "funlen",
     "gocognit",
     "gocyclo",

@@ -1,3 +1,3 @@
 module github.com/mythrnr/template-lib-golang
 
-go 1.21
+go 1.23
