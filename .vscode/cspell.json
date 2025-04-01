@@ -3,7 +3,7 @@
   "dictionaries": [
     "bash",
     "docker",
-    "golang"
+    "go"
   ],
   "enableGlobDot": true,
   "ignorePaths": [
@@ -18,16 +18,16 @@
     "buildvcs",
     "cyclop",
     "dupl",
-    "execinquery",
-    "exportloopref",
-    "funlen",
+    "errcheck",
     "gocognit",
     "gocyclo",
     "godox",
+    "gofmt",
+    "gofumpt",
     "goimports",
     "golangci",
-    "gomnd",
     "gomod",
+    "gopath",
     "guyarb",
     "makezero",
     "mylib",
@@ -35,6 +35,7 @@
     "nestif",
     "sonatype",
     "sonatypecommunity",
+    "strconv",
     "testpackage"
   ]
 }
