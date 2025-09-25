@@ -15,7 +15,6 @@
   "language": "en",
   "minWordLength": 4,
   "words": [
-    "buildvcs",
     "cyclop",
     "dupl",
     "errcheck",
@@ -28,13 +27,12 @@
     "golangci",
     "gomod",
     "gopath",
+    "govulncheck",
     "guyarb",
     "makezero",
     "mylib",
     "mythrnr",
     "nestif",
-    "sonatype",
-    "sonatypecommunity",
     "strconv",
     "testpackage"
   ]
